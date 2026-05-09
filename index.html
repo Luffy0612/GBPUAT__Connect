@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GBPUAT Alumni Network</title>
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- CUSTOM CURSOR -->
+
+    <div class="custom-cursor"></div>
+
+    <!-- LOADER -->
+
+    <div class="loader">
+
+        <h1>GBPUAT Connect</h1>
+
+    </div>
+
+    <!-- SCROLL PROGRESS BAR -->
+
+    <div class="progress-bar"></div>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="overlay"></div>
+
+        <!-- GRADIENT BALLS -->
+
+        <div class="gradient-ball ball1"></div>
+
+        <div class="gradient-ball ball2"></div>
+
+        <!-- PARTICLES -->
+
+        <div class="particles">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+        <!-- NAVBAR -->
+
+        <nav>
+
+            <div class="logo">
+
+                GBPUAT CONNECT
+
+            </div>
+
+            <!-- HAMBURGER -->
+
+            <div class="hamburger">
+
+                <span></span>
+
+                <span></span>
+
+                <span></span>
+
+            </div>
+
+            <!-- NAV BUTTONS -->
+
+            <div class="nav-buttons">
+
+                <button class="login-btn">
+
+                    Login
+
+                </button>
+
+                <a href="register.html">
+
+                    <button class="register-btn">
+
+                        Register
+
+                    </button>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+        <!-- HERO CONTENT -->
+
+        <div class="hero-content">
+
+            <h1>
+
+                Connecting GBPUAT Alumni & Students
+
+            </h1>
+
+            <p>
+
+                Discover mentors, internships, and career opportunities from the Pantnagar alumni network.
+
+            </p>
+
+            <div class="hero-buttons">
+                <button class="hero-btn primary-btn" id="exploreBtn">
+                    Explore Alumni
+                </button>
+
+                <button class="hero-btn secondary-btn" id="mentorBtn">
+                Find Mentors
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT SECTION -->
+
+    <section class="about">
+
+        <div class="about-left">
+
+            <img src="https://garhwalpost.in/wp-content/uploads/2026/02/Achievements-of-GBPUAT-Pantnagar.jpg"
+                alt="University">
+
+        </div>
+
+        <div class="about-right">
+
+            <h2>About GBPUAT Pantnagar</h2>
+
+            <p>
+
+                Govind Ballabh Pant University of Agriculture and Technology,
+                Pantnagar is India's first agricultural university and a pioneer
+                in agricultural education, research, and innovation.
+
+            </p>
+
+            <p>
+
+                The university has produced thousands of successful alumni
+                working in technology, agriculture, research, civil services,
+                startups, and multinational companies across the world.
+
+            </p>
+
+            <button>
+
+                Explore More
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ALUMNI SECTION -->
+
+<section class="alumni-section">
+
+    <h2>Explore Alumni By College</h2>
+
+    <!-- COLLEGE CARDS -->
+
+    <div class="college-container">
+
+        <!-- TECHNOLOGY -->
+
+        <div class="college-card"
+             onclick="toggleCollege('cot')">
+
+            <h3>College of Technology</h3>
+
+            <p>Click to view alumni</p>
+
+        </div>
+
+        <!-- AGRICULTURE -->
+
+        <div class="college-card"
+             onclick="toggleCollege('agri')">
+
+            <h3>College of Agriculture</h3>
+
+            <p>Click to view alumni</p>
+
+        </div>
+
+        <!-- BASIC SCIENCES -->
+
+        <div class="college-card"
+             onclick="toggleCollege('basic')">
+
+            <h3>College of Basic Sciences</h3>
+
+            <p>Click to view alumni</p>
+
+        </div>
+
+        <!-- VETERINARY -->
+
+        <div class="college-card"
+             onclick="toggleCollege('veterinary')">
+
+            <h3>College of Veterinary Sciences</h3>
+
+            <p>Click to view alumni</p>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         COLLEGE OF TECHNOLOGY
+    ========================== -->
+
+    <div class="alumni-details" id="cot">
+
+        <h3>College of Technology Alumni</h3>
+
+        <div class="alumni-info">
+
+            <!-- ALUMNI 1 -->
+
+            <div class="alumni-box">
+
+                <h4>Rahul Sharma</h4>
+
+                <p>Software Engineer at Google</p>
+
+                <span>Batch 2016</span>
+
+                <div class="alumni-contact">
+
+                    <p>📧 rahul.sharma@gmail.com</p>
+
+                    <p>📞 +91 9876543210</p>
+
+                    <p>📍 Bengaluru, India</p>
+
+                </div>
+
+            </div>
+
+            <!-- ALUMNI 2 -->
+
+            <div class="alumni-box">
+
+                <h4>Ankit Verma</h4>
+
+                <p>AI Engineer at Microsoft</p>
+
+                <span>Batch 2018</span>
+
+                <div class="alumni-contact">
+
+                    <p>📧 ankit.verma@gmail.com</p>
+
+                    <p>📞 +91 9123456780</p>
+
+                    <p>📍 Hyderabad, India</p>
+
+                </div>
+
+            </div>
+
+            <!-- ALUMNI 3 -->
+
+            <div class="alumni-box">
+
+                <h4>Sneha Kapoor</h4>
+
+                <p>Frontend Developer at Amazon</p>
+
+                <span>Batch 2019</span>
+
+                <div class="alumni-contact">
+
+                    <p>📧 sneha.kapoor@gmail.com</p>
+
+                    <p>📞 +91 9988776655</p>
+
+                    <p>📍 Pune, India</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         AGRICULTURE
+    ========================== -->
+
+    <div class="alumni-details" id="agri">
+
+        <h3>College of Agriculture Alumni</h3>
+
+        <div class="alumni-info">
+
+            <div class="alumni-box">
+
+                <h4>Amit Singh</h4>
+
+                <p>Founder of AgriTech Startup</p>
+
+                <span>Batch 2012</span>
+
+                <div class="alumni-contact">
+
+                    <p>📧 amit.singh@gmail.com</p>
+
+                    <p>📞 +91 9811122233</p>
+
+                    <p>📍 Delhi, India</p>
+
+                </div>
+
+            </div>
+
+            <div class="alumni-box">
+
+                <h4>Neha Joshi</h4>
+
+                <p>Agricultural Scientist at ICAR</p>
+
+                <span>Batch 2015</span>
+
+                <div class="alumni-contact">
+
+                    <p>📧 neha.joshi@gmail.com</p>
+
+                    <p>📞 +91 9871112233</p>
+
+                    <p>📍 Delhi, India</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         BASIC SCIENCES
+    ========================== -->
+
+    <div class="alumni-details" id="basic">
+
+        <h3>College of Basic Sciences Alumni</h3>
+
+        <div class="alumni-info">
+
+            <div class="alumni-box">
+
+                <h4>Priya Verma</h4>
+
+                <p>Research Scientist at ISRO</p>
+
+                <span>Batch 2014</span>
+
+                <div class="alumni-contact">
+
+                    <p>📧 priya.verma@gmail.com</p>
+
+                    <p>📞 +91 9000011111</p>
+
+                    <p>📍 Bengaluru, India</p>
+
+                </div>
+
+            </div>
+
+            <div class="alumni-box">
+
+                <h4>Rohit Mehta</h4>
+
+                <p>Data Analyst at Amazon</p>
+
+                <span>Batch 2017</span>
+
+                <div class="alumni-contact">
+
+                    <p>📧 rohit.mehta@gmail.com</p>
+
+                    <p>📞 +91 9090909090</p>
+
+                    <p>📍 Mumbai, India</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         VETERINARY
+    ========================== -->
+
+    <div class="alumni-details" id="veterinary">
+
+        <h3>Veterinary Sciences Alumni</h3>
+
+        <div class="alumni-info">
+
+            <div class="alumni-box">
+
+                <h4>Dr. Kunal Rawat</h4>
+
+                <p>Veterinary Officer</p>
+
+                <span>Batch 2013</span>
+
+                <div class="alumni-contact">
+
+                    <p>📧 kunal.rawat@gmail.com</p>
+
+                    <p>📞 +91 9887766554</p>
+
+                    <p>📍 Dehradun, India</p>
+
+                </div>
+
+            </div>
+
+            <div class="alumni-box">
+
+                <h4>Dr. Simran Kaur</h4>
+
+                <p>Animal Health Researcher</p>
+
+                <span>Batch 2019</span>
+
+                <div class="alumni-contact">
+
+                    <p>📧 simran.kaur@gmail.com</p>
+
+                    <p>📞 +91 9765432109</p>
+
+                    <p>📍 Chandigarh, India</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- STATS SECTION -->
+
+    <section class="stats-section">
+
+        <h2>Our Growing Network</h2>
+
+        <div class="stats-container">
+
+            <div class="stat-box">
+
+                <h3 class="counter" data-target="10000">
+
+                    0
+
+                </h3>
+
+                <p>Alumni Network</p>
+
+            </div>
+
+            <div class="stat-box">
+
+                <h3 class="counter" data-target="500">
+
+                    0
+
+                </h3>
+
+                <p>Active Mentors</p>
+
+            </div>
+
+            <div class="stat-box">
+
+                <h3 class="counter" data-target="200">
+
+                    0
+
+                </h3>
+
+                <p>Top Companies</p>
+
+            </div>
+
+            <div class="stat-box">
+
+                <h3 class="counter" data-target="50">
+
+                    0
+
+                </h3>
+
+                <p>Events Conducted</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- COMPANY SECTION -->
+
+    <section class="company-section">
+
+        <h2>Our Alumni Work At</h2>
+
+        <div class="marquee">
+
+            <div class="marquee-content">
+
+                <span>Google</span>
+
+                <span>Microsoft</span>
+
+                <span>Amazon</span>
+
+                <span>ISRO</span>
+
+                <span>ICAR</span>
+
+                <span>TCS</span>
+
+                <span>Infosys</span>
+
+                <span>Wipro</span>
+
+                <span>Meta</span>
+
+                <span>Adobe</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-box">
+
+                <h3>GBPUAT Connect</h3>
+
+                <p>
+
+                    Connecting alumni and students for mentorship, networking,
+                    internships, and career opportunities.
+
+                </p>
+
+            </div>
+
+            <div class="footer-box">
+
+                <h3>Quick Links</h3>
+
+                <a href="#">Home</a>
+
+                <a href="#">About</a>
+
+                <a href="#">Alumni</a>
+
+                <a href="#">Events</a>
+
+            </div>
+
+            <div class="footer-box">
+
+                <h3>Contact</h3>
+
+                <p>Pantnagar, Uttarakhand</p>
+
+                <p>support@gbpuatconnect.com</p>
+
+                <p>+91 9876543210</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+
+                © 2026 GBPUAT Connect | All Rights Reserved
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- LOGIN MODAL -->
+
+    <div class="modal" id="authModal">
+
+        <div class="modal-box">
+
+            <span class="close-btn" id="closeModal">
+
+                &times;
+
+            </span>
+
+            <h2>Welcome to GBPUAT Connect</h2>
+
+            <p>Select your role</p>
+
+            <div class="role-selection">
+
+                <button class="student-option">
+
+                    Student
+
+                </button>
+
+                <button class="alumni-option">
+
+                    Alumni
+
+                </button>
+
+            </div>
+
+            <!-- STUDENT FORM -->
+
+            <form class="student-form">
+
+                <input type="text" placeholder="Full Name">
+
+                <input type="text" placeholder="College ID">
+
+                <input type="email" placeholder="Email">
+
+                <input type="password" placeholder="Password">
+
+                <button type="submit">
+
+                    Login as Student
+
+                </button>
+
+            </form>
+
+            <!-- ALUMNI FORM -->
+
+            <form class="alumni-form">
+
+                <input type="text" placeholder="Full Name">
+
+                <input type="text" placeholder="Passing Year">
+
+                <input type="text" placeholder="Company Name">
+
+                <input type="email" placeholder="Email">
+
+                <input type="password" placeholder="Password">
+
+                <button type="submit">
+
+                    Login as Alumni
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- GSAP -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- JS -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
