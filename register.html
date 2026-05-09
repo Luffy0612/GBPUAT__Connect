@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Register | GBPUAT Connect</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* FIXED FORM TOGGLE */
+
+.main-student-form,
+.main-alumni-form{
+    display:none;
+}
+
+.main-student-form.active-form{
+    display:block;
+}
+
+.main-alumni-form.active-form{
+    display:block;
+}
+
+/* BUTTON ACTIVE STATE */
+.role-buttons button{
+    padding:10px 20px;
+    margin:10px;
+    cursor:pointer;
+    border:none;
+    border-radius:8px;
+    background:#1e293b;
+    color:white;
+}
+
+.role-buttons button:hover{
+    background:#06b6d4;
+}
+
+/* FORM UI */
+.register-container{
+    max-width:900px;
+    margin:auto;
+    padding:40px;
+    color:white;
+}
+
+.register-top{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.form-grid input,
+.form-grid select{
+    padding:12px;
+    border-radius:8px;
+    border:none;
+    outline:none;
+}
+
+.submit-btn{
+    margin-top:20px;
+    padding:12px 25px;
+    background:#06b6d4;
+    border:none;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<section class="register-page">
+
+<div class="register-container">
+
+    <div class="register-top">
+        <h1>Create Your Account</h1>
+        <p>Join GBPUAT Alumni Network</p>
+    </div>
+
+    <div class="role-buttons">
+        <button id="studentBtn" type="button">Student</button>
+        <button id="alumniBtn" type="button">Alumni</button>
+    </div>
+
+    <!-- STUDENT FORM -->
+    <form class="main-student-form active-form">
+
+        <div class="form-grid">
+
+            <input type="text" placeholder="Full Name">
+            <input type="text" placeholder="College ID">
+            <input type="email" placeholder="Email Address">
+            <input type="text" placeholder="Phone Number">
+            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Confirm Password">
+
+            <select>
+                <option>Select College</option>
+                <option>College of Technology</option>
+                <option>College of Agriculture</option>
+                <option>College of Veterinary Science</option>
+                <option>College of Forestry</option>
+                <option>College of Basic Sciences</option>
+                <option>College of Home Science</option>
+            </select>
+
+            <input type="text" placeholder="Department">
+            <input type="text" placeholder="Semester">
+            <input type="text" placeholder="Skills">
+            <input type="text" placeholder="LinkedIn Profile">
+            <input type="file">
+
+        </div>
+
+        <button type="submit" class="submit-btn">
+            Register as Student
+        </button>
+
+    </form>
+
+    <!-- ALUMNI FORM -->
+    <form class="main-alumni-form">
+
+        <div class="form-grid">
+
+            <input type="text" placeholder="Full Name">
+            <input type="text" placeholder="Passing Year">
+            <input type="email" placeholder="Email Address">
+            <input type="text" placeholder="Phone Number">
+            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Confirm Password">
+
+            <select>
+                <option>Select College</option>
+                <option>College of Technology</option>
+                <option>College of Agriculture</option>
+                <option>College of Veterinary Science</option>
+                <option>College of Forestry</option>
+                <option>College of Basic Sciences</option>
+                <option>College of Home Science</option>
+            </select>
+
+            <input type="text" placeholder="Department">
+            <input type="text" placeholder="Company Name">
+            <input type="text" placeholder="Current Position">
+            <input type="text" placeholder="Domain">
+            <input type="text" placeholder="LinkedIn Profile">
+            <input type="file">
+
+        </div>
+
+        <button type="submit" class="submit-btn">
+            Register as Alumni
+        </button>
+
+    </form>
+
+</div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
