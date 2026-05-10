@@ -1,0 +1,1 @@
+Hey there, Building a platform for connecting alumni accross the world of my uni. GBPUAT to its students, currently building it purely using AI, will build from scratch in future with the appropriate knowledge aquired!! 
