@@ -21,6 +21,12 @@
 
     <link rel="stylesheet" href="style.css">
 
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
 </head>
 
 <body>
@@ -66,52 +72,35 @@
         <nav>
 
             <div class="logo">
-
                 GBPUAT CONNECT
-
             </div>
 
-            <!-- HAMBURGER -->
-
             <div class="hamburger">
-
                 <span></span>
-
                 <span></span>
-
                 <span></span>
-
             </div>
 
             <div class="nav-buttons">
 
-                <!-- SMALL NAV LINKS -->
-
                 <div class="top-links">
-
                     <a href="#">Home</a>
-
                     <a href="#aboutSection">About</a>
-
                     <a href="#alumniSection">Alumni</a>
-
                     <a href="#">Events</a>
-
                 </div>
 
-                <!-- AUTH BUTTONS -->
+                <div class="auth-buttons">
 
-                <button class="login-btn">
-                    Login
-                </button>
-
-                <a href="register.html">
-
-                    <button class="register-btn">
-                        Register
+                    <button type="button" class="login-btn">
+                        Login
                     </button>
 
-                </a>
+                    <a href="register.html" class="register-btn">
+                        Register
+                    </a>
+
+                </div>
 
             </div>
 
@@ -119,18 +108,57 @@
 
         <!-- HERO CONTENT -->
 
+        <div class="hero-light"></div>
+
+        <div class="hero-wrapper">
+
+            <div class="hero-dashboard">
+
+                <div class="dashboard-card main-card">
+
+                    <div class="dashboard-top">
+                        <h3>GBPUAT Connect</h3>
+                        <span>LIVE</span>
+                    </div>
+
+                    <div class="dashboard-stats">
+
+                        <div>
+                            <h2>12K+</h2>
+                            <p>Alumni</p>
+                        </div>
+
+                        <div>
+                            <h2>4.8K</h2>
+                            <p>Students</p>
+                        </div>
+
+                    </div>
+
+                    <div class="dashboard-activity">
+
+                        <div class="activity-line"></div>
+
+                    </div>
+
+                    <div class="company-mini">
+                        <span>Google</span>
+                        <span>Microsoft</span>
+                        <span>Amazon</span>
+                    </div>
+
+                </div>
+
+            </div>            
+
         <div class="hero-content">
 
             <h1>
-
-                Connecting GBPUAT Alumni & Students
-
+                Build Your Career with GBPUAT Alumni Network
             </h1>
 
             <p>
-
-                Discover mentors, internships, and career opportunities from the Pantnagar alumni network.
-
+                Connect with alumni, find mentors, explore internships, and unlock real career opportunities from the GBPUAT network.
             </p>
 
             <div class="hero-buttons">
@@ -153,30 +181,48 @@
 
         <div class="about-left">
 
-            <img src="https://garhwalpost.in/wp-content/uploads/2026/02/Achievements-of-GBPUAT-Pantnagar.jpg"
+            <div class="about-image-wrapper">
+
+            <img src=https://img.jagranjosh.com/images/2023/August/2882023/343411742_6147426522037286_133760640804047436_n.jpg
                 alt="University">
+
+                <!-- TOP RIGHT FLOATING BOX -->
+
+                <div class="about-floating-card">
+
+                    <div class="floating-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+
+                    <div class="floating-content">
+                        <h4>Pantnagar,<br><span>Uttarakhand</span></h4>
+
+                        <div class="floating-line"></div>
+
+                        <p>
+                            <i class="fas fa-location-dot"></i>
+                            The Birthplace of<br>
+                            Green Revolution
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
         <div class="about-right">
 
-            <h2>About GBPUAT Pantnagar</h2>
+            <h2>India’s First Agricultural University</h2>
 
             <p>
-
-                Govind Ballabh Pant University of Agriculture and Technology,
-                Pantnagar is India's first agricultural university and a pioneer
-                in agricultural education, research, and innovation.
-
+                GBPUAT Pantnagar is a pioneering university in agricultural education, research, and innovation in India.
             </p>
 
-            <p>
-
-                The university has produced thousands of successful alumni
-                working in technology, agriculture, research, civil services,
-                startups, and multinational companies across the world.
-
-            </p>
+        <p>
+            Its alumni are working across top global companies, government organizations, research institutes, and successful startups.
+        </p>
 
             <a href="https://www.gbpuat.ac.in/" target="_blank">
 
@@ -186,9 +232,11 @@
 
                 </button>
 
-</a>
+            </a>
 
-        </div>
+        </div>     
+
+    </div>
 
     </section>
 
@@ -199,6 +247,16 @@
     <h2>Explore Alumni By College</h2>
 
     <!-- COLLEGE CARDS -->
+
+<div class="alumni-search">
+
+    <input
+        type="text"
+        id="alumniSearch"
+        placeholder="Search alumni, company, domain..."
+    >
+
+</div>    
 
     <div class="college-container">
 
@@ -229,7 +287,7 @@
         <div class="college-card"
              onclick="toggleCollege('basic')">
 
-            <h3>College of Basic Sciences</h3>
+            <h3>College of Basic Sciences and Humanities</h3>
 
             <p>Click to view alumni</p>
 
@@ -245,6 +303,7 @@
             <p>Click to view alumni</p>
 
         </div>
+        
 
     </div>
 
@@ -558,37 +617,35 @@
 
         <h2>Our Alumni Work At</h2>
 
-<div class="marquee">
+        <div class="marquee">
 
-    <div class="marquee-content">
+            <div class="marquee-content">
 
-        <a href="https://www.google.com" target="_blank">Google</a>
-        <a href="https://www.microsoft.com" target="_blank">Microsoft</a>
-        <a href="https://www.amazon.com" target="_blank">Amazon</a>
-        <a href="https://www.isro.gov.in" target="_blank">ISRO</a>
-        <a href="https://icar.org.in" target="_blank">ICAR</a>
-        <a href="https://www.tcs.com" target="_blank">TCS</a>
-        <a href="https://www.infosys.com" target="_blank">Infosys</a>
-        <a href="https://www.wipro.com" target="_blank">Wipro</a>
-        <a href="https://about.meta.com" target="_blank">Meta</a>
-        <a href="https://www.adobe.com" target="_blank">Adobe</a>
+                <a href="https://www.google.com" target="_blank">Google</a>
+                <a href="https://www.microsoft.com" target="_blank">Microsoft</a>
+                <a href="https://www.amazon.com" target="_blank">Amazon</a>
+                <a href="https://www.isro.gov.in" target="_blank">ISRO</a>
+                <a href="https://icar.org.in" target="_blank">ICAR</a>
+                <a href="https://www.tcs.com" target="_blank">TCS</a>
+                <a href="https://www.infosys.com" target="_blank">Infosys</a>
+                <a href="https://www.wipro.com" target="_blank">Wipro</a>
+                <a href="https://about.meta.com" target="_blank">Meta</a>
+                <a href="https://www.adobe.com" target="_blank">Adobe</a>
 
-        <!-- DUPLICATE SAME SET -->
+                <!-- DUPLICATE SAME SET -->
 
-        <a href="https://www.google.com" target="_blank">Google</a>
-        <a href="https://www.microsoft.com" target="_blank">Microsoft</a>
-        <a href="https://www.amazon.com" target="_blank">Amazon</a>
-        <a href="https://www.isro.gov.in" target="_blank">ISRO</a>
-        <a href="https://icar.org.in" target="_blank">ICAR</a>
-        <a href="https://www.tcs.com" target="_blank">TCS</a>
-        <a href="https://www.infosys.com" target="_blank">Infosys</a>
-        <a href="https://www.wipro.com" target="_blank">Wipro</a>
-        <a href="https://about.meta.com" target="_blank">Meta</a>
-        <a href="https://www.adobe.com" target="_blank">Adobe</a>
+                <a href="https://www.google.com" target="_blank">Google</a>
+                <a href="https://www.microsoft.com" target="_blank">Microsoft</a>
+                <a href="https://www.amazon.com" target="_blank">Amazon</a>
+                <a href="https://www.isro.gov.in" target="_blank">ISRO</a>
+                <a href="https://icar.org.in" target="_blank">ICAR</a>
+                <a href="https://www.tcs.com" target="_blank">TCS</a>
+                <a href="https://www.infosys.com" target="_blank">Infosys</a>
+                <a href="https://www.wipro.com" target="_blank">Wipro</a>
+                <a href="https://about.meta.com" target="_blank">Meta</a>
+                <a href="https://www.adobe.com" target="_blank">Adobe</a>
 
-    </div>
-
-</div>
+            </div>
 
         </div>
 
@@ -659,66 +716,190 @@
 
     <div class="modal" id="authModal">
 
-        <div class="modal-box glass-modal">
+        <div class="modal-box">
 
-            <span class="close-btn" id="closeModal">
-                &times;
-            </span>
+        <div class="login-blob blob-one"></div>
 
-            <div class="modal-header">
+        <div class="login-blob blob-two"></div>
+        
+        <div class="modal-glow glow-one"></div>
 
-                <h2>Welcome Back</h2>
+        <div class="modal-glow glow-two"></div>
 
-                <p>
-                    Login to GBPUAT Connect
-                </p>
+            <!-- LEFT SIDE -->
 
+            <div class="login-left-panel">
+
+                <div class="login-left-content">
+
+                    <h1>
+                        Connect Beyond Campus
+                    </h1>
+
+                    <p>
+                        Build mentorships, discover opportunities,
+                        and grow with the GBPUAT alumni network.
+                    </p>
+
+                    <div class="login-tags">
+
+                        <span>Mentorship</span>
+                        <span>Networking</span>
+                        <span>Career Growth</span>
+
+                    </div>
+
+                </div>
 
             </div>
 
-            <!-- ROLE BUTTONS -->
+            <!-- RIGHT SIDE -->
 
-            <div class="role-selection">
+            <div class="login-right-panel">
+                
+                <div class="login-scroll-area">
 
-                <button class="student-option active-role"
-                        type="button">
+                <span class="close-btn" id="closeModal">
+                    &times;
+                </span>
 
-                    Student
+                <div class="modal-header">
 
-                </button>
+                    <h2>Welcome Back</h2>
 
-                <button class="alumni-option"
-                        type="button">
+                    <p>
+                        Login to continue your journey
+                    </p>
 
-                    Alumni
-
-                </button>
-
-            </div>
-
-            <!-- STUDENT FORM -->
-
-            <form class="student-form active-form-modal">
-
-                <div class="input-box">
-                    <input type="text" placeholder="Full Name" required>
                 </div>
 
-                <div class="input-box">
-                    <input type="text" placeholder="College ID" required>
+                <!-- ROLE TOGGLE -->
+
+                <div class="role-selection">
+
+                    <button class="student-option active-role"
+                            type="button">
+
+                        Student
+
+                    </button>
+
+                    <button class="alumni-option"
+                            type="button">
+
+                        Alumni
+
+                    </button>
+
                 </div>
 
-                <div class="input-box">
-                    <input type="email" placeholder="University Email" required>
+                <!-- STUDENT FORM -->
+
+                <form class="student-form active-form-modal">
+
+                    <div class="premium-input">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <span class="input-divider"></span>
+
+                        <input
+                            type="email"
+                            required
+                        >
+
+                        <label>Email Address</label>
+
+                    </div>
+
+                    <div class="premium-input">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <span class="input-divider"></span>
+
+                        <input
+                            type="password"
+                            required
+                        >
+
+                        <label>Password</label>
+
+                    </div>
+
+                    <button class="auth-btn">
+                        Access Student Portal
+                    </button>
+
+                    <p class="secure-text">
+                        Secure encrypted login access
+                    </p>                    
+
+                </form>
+
+                <!-- ALUMNI FORM -->
+
+                <form class="alumni-form">
+
+                    <div class="premium-input">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <span class="input-divider"></span>
+
+                        <input
+                            type="email"
+                            required
+                        >
+
+                        <label>Email Address</label>
+
+                    </div>
+
+                    <div class="premium-input">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <span class="input-divider"></span>
+
+                        <input
+                            type="password"
+                            required
+                        >
+
+                        <label>Password</label>
+
+                    </div>
+
+                    <button class="auth-btn">
+                        Access Alumni Network
+                    </button>
+                    <p class="secure-text">
+                        Secure encrypted login access
+                    </p>                    
+                </form>
+
+
+                <!-- EXTRA -->
+
+                <div class="extra-login-options">
+
+                    <p>or continue with</p>
+
+                    <div class="social-buttons">
+
+                        <button class="google-btn">
+                            Google
+                        </button>
+
+                        <button class="linkedin-btn">
+                            LinkedIn
+                        </button>
+
+                    </div>
+
                 </div>
 
-                <div class="input-box">
-                    <input type="password" placeholder="Password" required>
-                </div>
-
-                <button type="submit" class="auth-btn">
-                    Login as Student
-                </button>
                 <p class="switch-register">
 
                     New here?
@@ -731,48 +912,9 @@
 
                 </p>
 
-            </form>
-
-            <!-- ALUMNI FORM -->
-
-            <form class="alumni-form">
-
-                <div class="input-box">
-                    <input type="text" placeholder="Full Name" required>
                 </div>
 
-                <div class="input-box">
-                    <input type="text" placeholder="Passing Year" required>
-                </div>
-
-                <div class="input-box">
-                    <input type="text" placeholder="Current Company" required>
-                </div>
-
-                <div class="input-box">
-                    <input type="email" placeholder="Professional Email" required>
-                </div>
-
-                <div class="input-box">
-                    <input type="password" placeholder="Password" required>
-                </div>
-
-                <button type="submit" class="auth-btn">
-                    Login as Alumni
-                </button>
-                <p class="switch-register">
-
-                    New here?
-
-                    <a href="register.html">
-
-                        Create Account
-
-                    </a>
-
-                </p>
-
-            </form>
+            </div>
 
         </div>
 
