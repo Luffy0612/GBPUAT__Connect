@@ -1,3 +1,14 @@
+window.addEventListener("load",()=>{
+
+    const modal =
+    document.getElementById("authModal");
+
+    if(modal){
+
+        modal.classList.remove("active");
+    }
+
+});
 /* =========================
    GSAP SAFE START
 ========================= */
@@ -32,32 +43,147 @@ if (typeof gsap !== "undefined") {
 
 }
 
+
 /* =========================
-   MODAL SYSTEM
+   PREMIUM MODAL SYSTEM
 ========================= */
 
-const loginBtn = document.querySelector(".login-btn");
-const registerBtn = document.querySelector(".register-btn");
-const modal = document.getElementById("authModal");
-const closeModal = document.getElementById("closeModal");
+const loginBtn =
+document.querySelector(".login-btn");
 
-if (loginBtn && modal) {
-    loginBtn.addEventListener("click", () => {
+const modal =
+document.getElementById("authModal");
+
+/* FORCE MODAL CLOSED ON LOAD */
+
+if(modal){
+
+    modal.classList.remove("active");
+
+    document.body.style.overflow = "auto";
+}
+
+const closeModal =
+document.getElementById("closeModal");
+
+/* OPEN MODAL */
+
+if(loginBtn && modal){
+
+    loginBtn.addEventListener("click", ()=>{
+
         modal.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+        if(typeof gsap !== "undefined"){
+
+            gsap.fromTo(
+                ".modal-box",
+                {
+                    opacity:0,
+                    scale:0.82,
+                    y:60
+                },
+                {
+                    opacity:1,
+                    scale:1,
+                    y:0,
+                    duration:0.6,
+                    ease:"power3.out"
+                }
+            );
+
+        }
+
     });
+
 }
 
-if (registerBtn && modal) {
-    registerBtn.addEventListener("click", () => {
-        modal.classList.add("active");
-    });
+/* CLOSE MODAL */
+
+function closePremiumModal(){
+
+    if(!modal) return;
+
+    modal.classList.remove("active");
+
+    document.body.style.overflow = "auto";
+
+    if(typeof gsap !== "undefined"){
+
+        gsap.set(".modal-box",{
+            clearProps:"all"
+        });
+
+    }
+
 }
 
-if (closeModal && modal) {
-    closeModal.addEventListener("click", () => {
-        modal.classList.remove("active");
+/* CLOSE BUTTON */
+
+if(closeModal && modal){
+
+    closeModal.addEventListener("click", ()=>{
+
+        if(typeof gsap !== "undefined"){
+
+            gsap.to(".modal-box",{
+
+                opacity:0,
+                scale:0.85,
+                y:40,
+                duration:0.35,
+                ease:"power2.in",
+
+                onComplete:()=>{
+
+                    modal.classList.remove("active");
+
+                    document.body.style.overflow =
+                    "auto";
+                }
+
+            });
+
+        }
+
+        else{
+
+            modal.classList.remove("active");
+
+            document.body.style.overflow =
+            "auto";
+        }
+
     });
+
 }
+
+/* CLOSE WHEN CLICK OUTSIDE */
+
+window.addEventListener("click",(e)=>{
+
+    if(!modal) return;
+
+    if(e.target === modal){
+
+        closePremiumModal();
+    }
+
+});
+
+/* ESC KEY CLOSE */
+
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key === "Escape"){
+
+        closePremiumModal();
+    }
+
+});
+
 
 /* =========================
    SCROLL BUTTONS
@@ -105,32 +231,69 @@ function toggleCollege(id){
 
 }
 
-/* =========================
-   COUNTER ANIMATION
-========================= */
+const counters =
+document.querySelectorAll(".counter");
 
-const counters = document.querySelectorAll(".counter");
+const statsSection =
+document.querySelector(".stats-section");
 
-counters.forEach(counter => {
+let started = false;
 
-    counter.innerText = "0";
+function startCounters(){
 
-    const updateCounter = () => {
+    if(started) return;
 
-        const target = +counter.getAttribute("data-target");
-        const current = +counter.innerText;
+    started = true;
+
+    counters.forEach(counter=>{
+
+        counter.innerText = "0";
+
+        const target =
+        +counter.getAttribute("data-target");
+
+        let current = 0;
+
         const increment = target / 100;
 
-        if (current < target) {
-            counter.innerText = Math.ceil(current + increment);
-            setTimeout(updateCounter, 20);
-        } else {
-            counter.innerText = target;
-        }
+        const updateCounter = ()=>{
 
-    };
+            current += increment;
 
-    updateCounter();
+            if(current < target){
+
+                counter.innerText =
+                Math.ceil(current);
+
+                requestAnimationFrame(updateCounter);
+
+            }
+
+            else{
+
+                counter.innerText = target;
+            }
+
+        };
+
+        updateCounter();
+
+    });
+
+}
+
+window.addEventListener("scroll",()=>{
+
+    if(!statsSection) return;
+
+    const sectionTop =
+    statsSection.offsetTop;
+
+    if(window.scrollY >
+       sectionTop - 500){
+
+        startCounters();
+    }
 
 });
 
@@ -199,7 +362,7 @@ const hero = document.querySelector(".hero");
 
 if (hero) {
 
-    document.addEventListener("mousemove", (e) => {
+    hero.addEventListener("mousemove", (e) => {
 
         const x = (window.innerWidth / 2 - e.pageX) / 40;
         const y = (window.innerHeight / 2 - e.pageY) / 40;
@@ -214,6 +377,34 @@ if (hero) {
 ========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    if(typeof gsap !== "undefined"){
+
+        gsap.from(".register-container",{
+
+            opacity:0,
+            y:50,
+            scale:0.96,
+
+            duration:1.1,
+            ease:"power4.out"
+        });
+
+        gsap.from(".field",{
+
+            opacity:0,
+            y:30,
+
+            stagger:0.05,
+
+            duration:0.8,
+
+            delay:0.3,
+
+            ease:"power3.out"
+        });        
+
+    }
 
     const studentBtn =
     document.getElementById("studentBtn");
@@ -243,35 +434,48 @@ document.addEventListener("DOMContentLoaded", () => {
         alumniForm
     ){
 
-        /* DEFAULT ACTIVE */
-
-        studentBtn.classList.add("active-role");
-
-        studentForm.classList.add("active-form");
-
-        alumniForm.classList.remove("active-form");
-
         /* DEFAULT STATE */
 
-        studentBtn.classList.add("student-dim");
-        alumniBtn.classList.add("alumni-highlight");
+        studentBtn.classList.add("student-active");
+        studentForm.classList.add("active-form");
+        alumniForm.classList.remove("active-form");
+
+        /* DEFAULT BUTTON LOOK */
+
+        studentBtn.style.opacity = "1";
+        alumniBtn.style.opacity = "0.65";
+
+        /* DEFAULT LEFT PANEL */
+
+        leftPanel.style.background =
+        "linear-gradient(180deg,#2563eb,#06b6d4)";
+
+        leftTitle.innerHTML =
+        `Start Building <br> Your Career`;
+
+        leftText.innerHTML =
+        `Connect with mentors,
+        discover internships,
+        and grow your skills.`;
 
         /* STUDENT BUTTON */
 
         studentBtn.addEventListener("click", ()=>{
 
-            /* OPPOSITE HIGHLIGHT */
+            /* BUTTON COLORS */
 
-            studentBtn.classList.add("student-dim");
+            studentBtn.classList.add("student-active");
 
-            alumniBtn.classList.remove("student-dim");
-            alumniBtn.classList.remove("student-highlight");
+            alumniBtn.classList.remove("alumni-active");
 
-            alumniBtn.classList.add("alumni-highlight");
+            alumniBtn.style.opacity = "0.65";
+
+            studentBtn.style.opacity = "1";
 
             /* FORM SWITCH */
 
             studentForm.classList.add("active-form");
+
             alumniForm.classList.remove("active-form");
 
             /* LEFT PANEL */
@@ -287,21 +491,26 @@ document.addEventListener("DOMContentLoaded", () => {
             discover internships,
             and grow your skills.`;
 
-            /* SMOOTH ANIMATION */
+            /* ANIMATION */
 
-            gsap.fromTo(
-                ".register-right",
-                {
-                    opacity:0,
-                    x:40
-                },
-                {
-                    opacity:1,
-                    x:0,
-                    duration:0.5,
-                    ease:"power3.out"
-                }
-            );
+            if(typeof gsap !== "undefined"){
+
+                gsap.fromTo(
+                    ".active-form .field",
+                    {
+                        opacity:0,
+                        y:20
+                    },
+                    {
+                        opacity:1,
+                        y:0,
+                        stagger:0.04,
+                        duration:0.45,
+                        ease:"power2.out"
+                    }
+                );
+
+            }
 
         });
 
@@ -309,13 +518,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         alumniBtn.addEventListener("click", ()=>{
 
-            /* OPPOSITE HIGHLIGHT */
+            /* BUTTON COLORS */
 
-            alumniBtn.classList.remove("alumni-highlight");
+            alumniBtn.classList.add("alumni-active");
 
-            studentBtn.classList.remove("student-dim");
+            studentBtn.classList.remove("student-active");
 
-            studentBtn.classList.add("student-highlight");
+            studentBtn.style.opacity = "0.65";
+
+            alumniBtn.style.opacity = "1";
 
             /* FORM SWITCH */
 
@@ -336,21 +547,26 @@ document.addEventListener("DOMContentLoaded", () => {
             mentor students,
             and create opportunities.`;
 
-            /* SMOOTH ANIMATION */
+            /* ANIMATION */
 
-            gsap.fromTo(
-                ".register-right",
-                {
-                    opacity:0,
-                    x:-40
-                },
-                {
-                    opacity:1,
-                    x:0,
-                    duration:0.5,
-                    ease:"power3.out"
-                }
-            );
+            if(typeof gsap !== "undefined"){
+
+                gsap.fromTo(
+                    ".active-form .field",
+                    {
+                        opacity:0,
+                        y:20
+                    },
+                    {
+                        opacity:1,
+                        y:0,
+                        stagger:0.04,
+                        duration:0.45,
+                        ease:"power2.out"
+                    }
+                );
+
+            }
 
         });
 
@@ -365,16 +581,16 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
 
     const studentOption =
-        document.querySelector(".student-option");
+    document.querySelector(".student-option");
 
     const alumniOption =
-        document.querySelector(".alumni-option");
+    document.querySelector(".alumni-option");
 
     const studentForm =
-        document.querySelector(".student-form");
+    document.querySelector(".student-form");
 
     const alumniForm =
-        document.querySelector(".alumni-form");
+    document.querySelector(".alumni-form");
 
     if(
         studentOption &&
@@ -382,6 +598,16 @@ document.addEventListener("DOMContentLoaded", () => {
         studentForm &&
         alumniForm
     ){
+
+        /* DEFAULT STATE */
+
+        studentOption.classList.add("active-role");
+
+        alumniOption.classList.remove("active-role");
+
+        studentOption.style.opacity = "1";
+
+        alumniOption.style.opacity = "0.65";
 
         /* STUDENT */
 
@@ -402,6 +628,10 @@ document.addEventListener("DOMContentLoaded", () => {
             alumniOption.classList.remove(
                 "active-role"
             );
+
+            studentOption.style.opacity = "1";
+
+            alumniOption.style.opacity = "0.65";
 
         });
 
@@ -425,34 +655,65 @@ document.addEventListener("DOMContentLoaded", () => {
                 "active-role"
             );
 
+            alumniOption.style.opacity = "1";
+
+            studentOption.style.opacity = "0.65";
+
         });
 
     }
 
 });
-/* NAVBAR HIDE ON SCROLL */
+
+/* PREMIUM NAVBAR SCROLL */
+
+const navbar =
+document.querySelector(".premium-nav");
 
 let lastScroll = 0;
 
-const navbar = document.querySelector("nav");
+if(navbar){
 
-window.addEventListener("scroll", ()=>{
+    window.addEventListener("scroll",()=>{
 
-    const currentScroll = window.pageYOffset;
+        const currentScroll =
+        window.pageYOffset;
 
-    if(currentScroll > lastScroll){
+        /* SCROLL EFFECT */
 
-        navbar.classList.add("hide-nav");
+        if(currentScroll > 30){
 
-    }else{
+            navbar.classList.add("scrolled");
 
-        navbar.classList.remove("hide-nav");
+        }
 
-    }
+        else{
 
-    lastScroll = currentScroll;
+            navbar.classList.remove("scrolled");
+        }
 
-});
+        /* HIDE ON DOWN */
+
+        if(
+            currentScroll > lastScroll &&
+            currentScroll > 120
+        ){
+
+            navbar.style.transform =
+            "translateX(-50%) translateY(-120px)";
+        }
+
+        else{
+
+            navbar.style.transform =
+            "translateX(-50%) translateY(0)";
+        }
+
+        lastScroll = currentScroll;
+
+    });
+
+}
 /* =========================
    STUDENT REGISTER
 ========================= */
@@ -496,7 +757,7 @@ if(studentRegisterForm){
         try{
 
             const response = await fetch(
-                "http://localhost:5000/register",
+                "/register",
                 {
                     method:"POST",
                     headers:{
@@ -648,58 +909,215 @@ document.getElementById("previewImage");
 const uploadText =
 document.getElementById("uploadText");
 
-if(upload && preview && uploadText){
+const removeBtn =
+document.getElementById("removeImage");
+
+const uploadTrigger =
+document.getElementById("uploadTrigger");
+
+if(
+    upload &&
+    preview &&
+    uploadText &&
+    removeBtn &&
+    uploadTrigger
+){
+
+    /* OPEN FILE PICKER */
+
+    uploadTrigger.addEventListener("click",()=>{
+
+        if(!upload.files.length){
+
+            upload.click();
+        }
+
+    });
+
+    /* FILE SELECT */
 
     upload.addEventListener("change",(e)=>{
 
-        const file =
-        e.target.files[0];
+        const file = e.target.files[0];
 
         if(file){
 
             preview.src =
             URL.createObjectURL(file);
 
-            preview.style.display =
-            "block";
+            preview.style.display = "block";
 
-            uploadText.innerText =
-            file.name;
+            removeBtn.style.display = "flex";
+
+            let fileName = file.name;
+
+            if(fileName.length > 18){
+
+                fileName =
+                fileName.substring(0,18) + "...";
+            }
+
+            uploadText.innerText = fileName;
         }
+
+    });
+
+    /* REMOVE IMAGE */
+
+    removeBtn.addEventListener("click",(e)=>{
+
+        e.preventDefault();
+
+        upload.value = "";
+
+        preview.src = "";
+
+        preview.style.display = "none";
+
+        removeBtn.style.display = "none";
+
+        uploadText.innerText =
+        "Upload Profile Photo";
     });
 
 }
-const password =
-document.getElementById("studentPassword");
+/* IMAGE MODAL */
 
-const fill =
-document.getElementById("strengthFill");
+const imageModal =
+document.getElementById("imageModal");
 
-password.addEventListener("input",()=>{
+const fullPreview =
+document.getElementById("fullPreviewImage");
 
-    const val =
-    password.value.length;
+const closeImageModal =
+document.getElementById("closeImageModal");
 
-    if(val < 4){
+if(
+    preview &&
+    imageModal &&
+    fullPreview &&
+    closeImageModal
+){
 
-        fill.style.width="30%";
-        fill.style.background="#ef4444";
-    }
+    preview.addEventListener("click",(e)=>{
 
-    else if(val < 8){
+        e.stopPropagation();
 
-        fill.style.width="65%";
-        fill.style.background="#f59e0b";
-    }
+        fullPreview.src = preview.src;
 
-    else{
+        imageModal.classList.add("active");
+    });
 
-        fill.style.width="100%";
-        fill.style.background="#22c55e";
-    }
+    closeImageModal.addEventListener("click",()=>{
+
+        imageModal.classList.remove("active");
+    });
+
+    imageModal.addEventListener("click",(e)=>{
+
+        if(e.target === imageModal){
+
+            imageModal.classList.remove("active");
+        }
+
+    });
+
+}
+
+/* =========================
+   PASSWORD TOGGLE
+========================= */
+
+const toggleButtons =
+document.querySelectorAll(".toggle-password");
+
+toggleButtons.forEach((btn)=>{
+
+    btn.addEventListener("click", ()=>{
+
+        const input =
+        btn.parentElement.querySelector("input");
+
+        const icon =
+        btn.querySelector("i");
+
+        if(!input || !icon) return;
+
+        if(input.type === "password"){
+
+            input.type = "text";
+
+            icon.classList.remove("fa-eye");
+
+            icon.classList.add("fa-eye-slash");
+
+        }
+
+        else{
+
+            input.type = "password";
+
+            icon.classList.remove("fa-eye-slash");
+
+            icon.classList.add("fa-eye");
+
+        }
+
+    });
+
 });
-const leftTitle =
-document.getElementById("leftTitle");
 
-const leftText =
-document.getElementById("leftText");
+const alumniSearch =
+document.getElementById("alumniSearch");
+
+if(alumniSearch){
+
+    alumniSearch.addEventListener("keyup",()=>{
+
+        const value =
+        alumniSearch.value.toLowerCase();
+
+        const alumniBoxes =
+        document.querySelectorAll(".alumni-box");
+
+        alumniBoxes.forEach(box=>{
+
+            const text =
+            box.innerText.toLowerCase();
+
+            if(text.includes(value)){
+
+                box.style.display = "block";
+
+            }
+
+            else{
+
+                box.style.display = "none";
+            }
+
+        });
+
+    });
+
+}
+if(typeof gsap !== "undefined"){
+
+    gsap.utils.toArray("section").forEach((section)=>{
+
+        gsap.from(section,{
+
+            opacity:0,
+            y:80,
+
+            duration:1,
+
+            scrollTrigger:{
+                trigger:section,
+                start:"top 80%"
+            }
+        });
+
+    });
+
+}
